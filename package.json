@@ -1,0 +1,12 @@
+{
+  "name": "slowloris",
+  "version": "1.0.0",
+  "scripts": {
+    "victim.run": "docker build -t victim victim && docker run -it --ulimit nofile=245760:245760 --name victim -p 127.0.0.1:50000:80 -d victim",
+    "victim.clean": "docker stop victim && docker rm victim && docker image rm victim",
+    "attack.run": "docker build -t attack ./attack && docker run --network=\"host\" --name=\"attack\" --env VICTIM=http://localhost:50000 --env LIMIT=5000 attack",
+    "attack.clean": "docker stop attack && docker rm attack && docker image rm attack",
+    "test.run": "docker build -t test ./test && docker run --network=\"host\" --name=\"test\" --env VICTIM=http://localhost:50000 test",
+    "test.clean": "docker stop test && docker rm test && docker image rm test"
+  }
+}
