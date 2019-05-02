@@ -41,7 +41,7 @@ connections per second. So to open 10000 it will take 100 seconds
 To configure the victim url and the number of parallel requests change `VICTIM` and `LIMIT` values
 of the start script
 
-If the victim fall, the log value would go to negative
+If the victim fall, the log values would go to negative
 
 #### Test
 
@@ -50,4 +50,4 @@ response code, wait for a second and start over again
 
 To configure the victim url change `VICTIM` value of the start script
 
-If the victim fall, the the `test` will crash
+If the victim fall, the `test` will crash
