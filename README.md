@@ -1,5 +1,3 @@
-Yet another Slowloris attack/defence implementation
-
 There are three Docker containers - `victim`, `attack` and `test`
 
 ## Quick Start
